@@ -23,3 +23,47 @@ div {
         height: 16.66vh;
     }
 }
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.lightgreen {
+    background-color: lightgreen;
+}
+
+.cadetblue {
+    background-color: cadetblue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.hidden {
+    background-color: black;
+}
+
+.off {
+    background-color: #eee;
+}
