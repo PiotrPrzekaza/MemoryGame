@@ -13,7 +13,13 @@ const gamePairs = cards.length / 2
 let gameResult = 0;
 
 const clickCard = function () {
+    activeCard = this;
+    activeCard.classList.remove("hidden");
 
+    if (activePair.length === 0) {
+        activePair[0] = activeCard;
+        return;
+    }
 }
 const init = () => {
     cards.forEach(card => {
