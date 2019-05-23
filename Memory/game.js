@@ -29,7 +29,7 @@ const clickCard = function () {
 
         setTimeout(function () {
             if (activeCards[0].className === activeCards[1].className) {
-                activePair.forEach(card => {
+                activeCards.forEach(card => {
                     card.classList.add('off');
                 })
             }
@@ -40,7 +40,7 @@ const clickCard = function () {
             }
             activeCard = "";
             activeCards.length = [];
-            cards.forEach(card => addEventListener("click", clickCard));
+            cards.forEach(card => card.addEventListener("click", clickCard));
         }, 1000)
 
 
