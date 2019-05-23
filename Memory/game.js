@@ -7,35 +7,42 @@ const timeStart = new Date().getTime();
 
 
 let activeCard = "";
-const activePair = [];
+const activeCards = [];
 
 const gamePairs = cards.length / 2
 let gameResult = 0;
 
 const clickCard = function () {
     activeCard = this;
+
+    if (activeCard == activeCards[0]) return;
+
     activeCard.classList.remove("hidden");
 
-    if (activePair.length === 0) {
-        activePair[0] = activeCard;
+    if (activeCards.length === 0) {
+        activeCards[0] = activeCard;
         return;
     }
     else {
         cards.forEach(card => card.removeEventListener("click", clickCard))
-        activePair[1] = activeCard;
+        activeCards[1] = activeCard;
 
         setTimeout(function () {
-            if (activePair[0].className === activePair[1].className) {
+            if (activeCards[0].className === activeCards[1].className) {
                 activePair.forEach(card => {
                     card.classList.add('off');
                 })
             }
             else {
-                activePair.forEach(card => {
+                activeCards.forEach(card => {
                     card.classList.add('hidden')
                 })
             }
+            activeCard = "";
+            activeCards.length = [];
+            cards.forEach(card => addEventListener("click", clickCard));
         }, 1000)
+
 
     };
 }
