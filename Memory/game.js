@@ -3,7 +3,7 @@ const cardsColor = ["red", "red", "green", "green", "blue", "blue", "brown", "br
 let cards = document.querySelectorAll("div");
 cards = [...cards];
 
-const timeStart = new Date().getTime();
+const startTime = new Date().getTime();
 
 
 let activeCard = "";
@@ -32,6 +32,13 @@ const clickCard = function () {
                 activeCards.forEach(card => {
                     card.classList.add('off');
                 })
+                gameResult++;
+                if (gameResult === gamePairs) {
+                    const endTime = new Date().getTime();
+                    const gameTime = (endTime - startTime) / 1000;
+                    alert(`Udało się! Twój wynik to: ${gameTime} sekund`);
+                    location.reload();
+                }
             }
             else {
                 activeCards.forEach(card => {
