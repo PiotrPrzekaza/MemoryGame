@@ -33,6 +33,7 @@ const clickCard = function () {
                     card.classList.add('off');
                 })
                 gameResult++;
+                cards = cards.filter(card => !card.classList.contains("off"))
                 if (gameResult === gamePairs) {
                     const endTime = new Date().getTime();
                     const gameTime = (endTime - startTime) / 1000;
@@ -49,7 +50,6 @@ const clickCard = function () {
             activeCards.length = [];
             cards.forEach(card => card.addEventListener("click", clickCard));
         }, 1000)
-
 
     };
 }
